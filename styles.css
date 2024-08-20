@@ -1,0 +1,158 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Lato;
+  transition: all 0.2s ease;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.card {
+  width: 500px;
+  height: 280px;
+  background-color: #222;
+  overflow: hidden;
+  position: relative;
+  border-radius: 20px;
+
+  &:after,
+  &:before {
+    content: "";
+    width: 400px;
+    height: 250px;
+    display: block;
+    position: absolute;
+    background: #fe930e;
+    transform: rotate(-55deg);
+    left: -174px;
+    top: -70px;
+  }
+
+  &:before {
+    transform: rotate(-125deg);
+    top: 100px;
+  }
+
+  &.invert {
+    background-color: #fe930e;
+
+    &:after,
+    &:before {
+      background: #222;
+    }
+
+    .badge {
+      background: #fe930e;
+      box-shadow: 10px 0 20px 0 #b7811e;
+
+      &:before,
+      &:after {
+        background: #fe930e;
+      }
+    }
+
+    .title {
+      color: #222;
+    }
+
+    .info {
+      color: #222;
+    }
+
+    .switch {
+      background: #222;
+
+      &:after {
+        background: #fe930e;
+        left: 21px;
+      }
+    }
+  }
+}
+
+.badge {
+  width: 210px;
+  height: 138px;
+  background: #222;
+  z-index: 1;
+  position: relative;
+  border-radius: 20px;
+  top: 70px;
+  left: 40px;
+  box-shadow: 10px 0px 20px 0 #000;
+
+  &:after,
+  &:before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: #222;
+    display: block;
+    position: absolute;
+    border-radius: 20px;
+    transform: rotate(60deg);
+    transition: all 0.2s ease;
+  }
+
+  &:before {
+    transform: rotate(-60deg);
+  }
+}
+
+.title {
+  color: #fff;
+  text-transform: uppercase;
+  z-index: 1;
+  position: relative;
+  font-size: 24px;
+  top: -20px;
+  left: 40px;
+  text-align: center;
+  width: 210px;
+  display: inline-block;
+}
+
+.subtitle {
+  font-size: 11px;
+  margin-top: 4px;
+}
+
+.info {
+  position: relative;
+  z-index: 1;
+  color: #fff;
+  top: -90px;
+  left: 277px;
+
+  p {
+    line-height: 24px;
+  }
+}
+
+.switch {
+  width: 40px;
+  height: 20px;
+  border-radius: 20px;
+  background: #fe930e;
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+
+  &:after {
+    content: "";
+    background: #222;
+    width: 16px;
+    height: 16px;
+    display: block;
+    position: absolute;
+    transition: left 0.2s linear;
+    border-radius: 50%;
+    top: 2px;
+    left: 3px;
+  }
+}
